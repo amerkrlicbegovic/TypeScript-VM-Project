@@ -1,14 +1,41 @@
-class Quater {
-    private value: number = .25;
-    get Value(){
-        return this.value;
+abstract class Coin {
+    constructor(public value: number) {
     }
-    set Value(newValue: number){
-        this.value = newValue;
+    abstract getImageUrl(): string;
+}
+
+class Dime extends Coin {
+    constructor() {
+        super(.1);
     }
-    gerImageUrl (): string {
-        return "img/Quarter.png"
+    getImageUrl () {
+        return "img/Dime.png";
     }
 }
 
-var coin = new Quater();
+class Quarter extends Coin {
+    constructor() {
+        super(.25);
+    }
+    getImageUrl () {
+        return "img/Quarter.png";
+    }
+}
+
+class Half extends Coin {
+    constructor() {
+        super(.5);
+    }
+    getImageUrl () {
+        return "img/Half.png";
+    }
+}
+
+class Dollar extends Coin {
+    constructor() {
+        super(1);
+    }
+    getImageUrl () {
+        return "img/Dollar.jpg";
+    }
+}
